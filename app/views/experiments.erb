@@ -1,5 +1,7 @@
 <% title 'Experiments' %>
 
+<link rel="stylesheet" href="/stylesheets/experiments.css" />
+
 <section class="header">
   <header>
     <h1>Experiments</h1>
@@ -48,20 +50,86 @@
   </article>
 
   <article class="container new">
-    <h3>New Experiment</h3>
+    <h3>Whyyu Menu AB Test</h3>
     <pre><%= %{
 <script src="//#{request.host_with_port}/v1/abba.js"></script>
 
 <script>
-  Abba('test name')
-    .control('test a', function(){ /* ... */ })
-    .variant('test b', function(){ /* ... */ })
-    .start();
-</script>
+jQuery(document).ready(function($) {
 
-<script>
-  // On successful conversion
-  Abba('test name').complete();
+    // show new menu if bool === true
+    function showNewMenu(bool) {
+        if (bool) {
+            $('.whyyu_old_menu').remove(0);
+            $('.whyyu_new_menu').show(0);
+            $.cookie('external_menu_type', 'BDhARwZZm_1aR5jKQi00dV0WD3faSj', {expires: 90});
+            console.log('Showing new menu.');
+        } else {
+            $('.whyyu_new_menu').remove(0);
+            $('.whyyu_old_menu').show(0);
+            $.cookie('external_menu_type', 'BDhARwZZm_0aR5jKQi00dV0WD3faSj', {expires: 90});
+            console.log('Showing old menu.');
+        }
+    }
+
+    function startTest(menu_type) {
+        if (typeof Abba !== 'function') {
+            showNewMenu(false);
+            console.log('Menu AB test breaks, displaying old menu.');
+            return;
+        }
+
+        if (menu_type === '1') {
+            Abba('Whyyu Menu AB Test 3').start('New Menu');
+            showNewMenu(true);
+            return;
+        } else if (menu_type === '0') {
+            Abba('Whyyu Menu AB Test 3').start('Old Menu');
+            showNewMenu(false);
+            return;
+        }
+
+        Abba('Whyyu Menu AB Test 3')
+            .control('Old Menu', {weight: 5}, function(){
+                showNewMenu(false);
+            })
+            .variant('New Menu', {weight: 5}, function(){
+                showNewMenu(true);
+            })
+            .start();
+    }
+
+    function endTest() {
+        if (typeof Abba !== 'function') {
+            showNewMenu(false);
+            console.log('Menu AB test breaks, displaying old menu.');
+            return;
+        }
+
+        var test = Abba('Whyyu Menu AB Test 3',{persist: true}).complete();
+
+        // show different menu on free trial page
+        if (test.getVariantCookie() === "New Menu") {
+            showNewMenu(true);
+        } else {
+            showNewMenu(false);
+        }
+    }
+
+    // menu exists; not free trial page; set up ab test
+    if (($("#nav_menu_content").length === 1 || $("#ask_footer").length === 1) && !location.pathname.match(/\/free_trial/)) {
+        console.log('starting the test...');
+        var menu_type;
+        if ($.cookie('external_menu_type') !== null) {
+            menu_type = $.cookie('external_menu_type').split('_')[1].substr(0,1);
+        }
+        startTest(menu_type);
+    // end the test on free trial page
+    } else if (location.pathname.match(/\/free_trial/)) {
+        console.log('ending the test...');
+        endTest();
+    }
+});
 </script>
 }.strip %></pre>
   </article>

@@ -1,0 +1,51 @@
+section.experiments {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  -webkit-box-pack: start;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  -moz-box-pack: start;
+}
+section.experiments .list {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  margin-right: 0px;
+}
+section.experiments .new {
+  width: 420px;
+  height: 100%;
+}
+section.experiments pre {
+  margin: 0;
+  overflow-x: auto;
+}
+section.experiments table tr td.state {
+  width: 10px;
+  vertical-align: middle;
+}
+section.experiments table tr td.state div {
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+section.experiments table tr td.state div.active {
+  background-color: #82c82d;
+}
+section.experiments table tr td.state div.inactive {
+  background-color: #b90000;
+}
+section.experiments table tr .index {
+  width: 20px;
+}
+section.experiments table tr .actions {
+  text-align: right;
+}

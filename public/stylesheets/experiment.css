@@ -1,0 +1,256 @@
+section.experiment {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  -webkit-box-pack: start;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  -moz-box-pack: start;
+}
+section.experiment > article {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  overflow: hidden;
+}
+section.experiment form input[type=date] {
+  font-family: "HelveticaNeue", Helvetica, Arial, sans-serif;
+  min-width: 145px;
+}
+section.experiment form label {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 5px;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  -webkit-box-pack: start;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  -moz-box-pack: start;
+}
+section.experiment form label span {
+  display: block;
+  width: 80px;
+  line-height: 25px;
+}
+section.experiment form label span:after {
+  content: ':';
+}
+section.experiment form label input,
+section.experiment form label select {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+}
+section.experiment form label select {
+  display: block;
+  margin-top: 3px;
+}
+section.experiment form label:last-child {
+  margin-bottom: 0;
+}
+section.experiment table .conversion:empty:after,
+section.experiment table .probability:empty:after,
+section.experiment table .difference:empty:after {
+  content: '–';
+}
+section.experiment table .conversion:not(:empty):after,
+section.experiment table .probability:not(:empty):after,
+section.experiment table .difference:not(:empty):after {
+  content: '%';
+}
+section.experiment table .difference.positive:before {
+  content: '+';
+}
+section.experiment table .difference.positive {
+  color: #209b00;
+}
+section.experiment table .difference.negative {
+  color: #8b1c1c;
+}
+section.experiment article.chart {
+  border: 1px solid #dbdbdb;
+  margin: 30px;
+}
+section.experiment .chart {
+  position: relative;
+  font-size: 10px;
+}
+section.experiment .chart .areas {
+  opacity: 0.1;
+}
+section.experiment .chart .line {
+  stroke-width: 2px;
+}
+section.experiment .chart .circle {
+  stroke-width: 3px;
+  fill: #fff;
+}
+section.experiment .chart .axis.y {
+  fill: #a2a8b1;
+}
+section.experiment .chart .axis.y path {
+  display: none;
+}
+section.experiment .chart .axis.x {
+  fill: #a2a8b1;
+}
+section.experiment .chart .axis.x path {
+  fill: #dcdcdc;
+}
+section.experiment .chart .variants {
+  fill: none;
+}
+section.experiment .chart .variant-0 .circle {
+  stroke: #a7d3dc;
+}
+section.experiment .chart .variant-1 .circle {
+  stroke: #ff8a60;
+}
+section.experiment .chart .variant-2 .circle {
+  stroke: #9d96d3;
+}
+section.experiment .chart .variant-3 .circle {
+  stroke: #d62728;
+}
+section.experiment .chart .variant-4 .circle {
+  stroke: #9467bd;
+}
+section.experiment .chart .variant-5 .circle {
+  stroke: #8c564b;
+}
+section.experiment .chart .variant-6 .circle {
+  stroke: #e377c2;
+}
+section.experiment .chart .variant-7 .circle {
+  stroke: #7f7f7f;
+}
+section.experiment .chart .variant-8 .circle {
+  stroke: #bcbd22;
+}
+section.experiment .chart .variant-9 .circle {
+  stroke: #17becf;
+}
+section.experiment .chart .variant-0 .line {
+  stroke: #a7d3dc;
+}
+section.experiment .chart .variant-1 .line {
+  stroke: #ff8a60;
+}
+section.experiment .chart .variant-2 .line {
+  stroke: #9d96d3;
+}
+section.experiment .chart .variant-3 .line {
+  stroke: #d62728;
+}
+section.experiment .chart .variant-4 .line {
+  stroke: #9467bd;
+}
+section.experiment .chart .variant-5 .line {
+  stroke: #8c564b;
+}
+section.experiment .chart .variant-6 .line {
+  stroke: #e377c2;
+}
+section.experiment .chart .variant-7 .line {
+  stroke: #7f7f7f;
+}
+section.experiment .chart .variant-8 .line {
+  stroke: #bcbd22;
+}
+section.experiment .chart .variant-9 .line {
+  stroke: #17becf;
+}
+section.experiment .chart .areas {
+  display: none;
+}
+section.experiment .chart .area-0 {
+  fill: #a7d3dc;
+}
+section.experiment .chart .area-1 {
+  fill: #ff8a60;
+}
+section.experiment .chart .area-2 {
+  fill: #9d96d3;
+}
+section.experiment .chart .area-3 {
+  fill: #d62728;
+}
+section.experiment .chart .area-4 {
+  fill: #9467bd;
+}
+section.experiment .chart .area-5 {
+  fill: #8c564b;
+}
+section.experiment .chart .area-6 {
+  fill: #e377c2;
+}
+section.experiment .chart .area-7 {
+  fill: #7f7f7f;
+}
+section.experiment .chart .area-8 {
+  fill: #bcbd22;
+}
+section.experiment .chart .area-9 {
+  fill: #17becf;
+}
+section.experiment .chart ul.legend {
+  list-style: none;
+  margin: 0;
+  position: absolute;
+  top: -20px;
+  right: 0px;
+  overflow: hidden;
+  color: #696969;
+  font-size: 11px;
+}
+section.experiment .chart ul.legend li {
+  margin-right: 32px;
+  position: relative;
+}
+section.experiment .chart ul.legend li:after {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 3px;
+  position: absolute;
+  right: -32px;
+  top: 5px;
+}
+section.experiment .chart ul.legend .legend-0:after {
+  background-color: #a7d3dc;
+}
+section.experiment .chart ul.legend .legend-1:after {
+  background-color: #ff8a60;
+}
+section.experiment .chart ul.legend .legend-2:after {
+  background-color: #9d96d3;
+}
+section.experiment .chart ul.legend .legend-3:after {
+  background-color: #d62728;
+}
+section.experiment .chart ul.legend .legend-4:after {
+  background-color: #9467bd;
+}
+section.experiment .chart ul.legend .legend-5:after {
+  background-color: #8c564b;
+}
+section.experiment .chart ul.legend .legend-6:after {
+  background-color: #e377c2;
+}
+section.experiment .chart ul.legend .legend-7:after {
+  background-color: #7f7f7f;
+}
+section.experiment .chart ul.legend .legend-8:after {
+  background-color: #bcbd22;
+}
+section.experiment .chart ul.legend .legend-9:after {
+  background-color: #17becf;
+}

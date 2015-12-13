@@ -22,10 +22,12 @@ configure do
   env = Sprockets::Environment.new(settings.root)
 
   env.append_path('app/assets/javascripts')
-  env.append_path('app/assets/stylesheets')
+
+  # disable compile styles in runtime to avoid compiling error; do this manually using stylus;
+  # env.append_path('app/assets/stylesheets')
   env.append_path('vendor/assets/javascripts')
 
-  Stylus.setup(env)
+  # Stylus.setup(env)
 
   set :sprockets, env
   set :views, 'app/views'
