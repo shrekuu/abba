@@ -1,4 +1,4 @@
-# Abba
+# Abba for `whyyu` app
 
 Abba is a simple a/b testing self-hosted framework built to help improve conversion rates on your site.
 
